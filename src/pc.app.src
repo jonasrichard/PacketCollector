@@ -1,0 +1,16 @@
+{application, pc,
+ [
+  {description, "An distributed log collector"},
+  {vsn, "0.1"},
+  {registered, []},
+  {applications, [
+      kernel,
+      stdlib,
+      crypto,
+      lager,
+      cowboy
+  ]},
+  {mod, {pc_app, []}},
+  {env, []}
+ ]}.
+

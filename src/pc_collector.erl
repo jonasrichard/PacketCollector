@@ -1,7 +1,8 @@
 -module(pc_collector).
 -behaviour(gen_server).
 
--export([start_link/0]).
+-export([start_link/0,
+         collect/6]).
 
 -export([init/1,
          handle_info/2,

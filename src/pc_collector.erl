@@ -52,7 +52,8 @@ handle_packet(Tab, IP, SourceId, StreamId, PartId, Last, PayLoad) ->
                      S = {Key, TS, IP, [Part]},
                      ets:insert(Tab, S),
                      S;
-                 [{Key, TS, Parts}] ->
+                 [{Key, TS, _IP, Parts}] ->
+                     %% The _IP and IP should be equal
                      S =  {Key, TS, IP, [Part | Parts]},
                      ets:insert(Tab, S),
                      S

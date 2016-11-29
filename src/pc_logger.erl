@@ -43,8 +43,8 @@ terminate(_Reason, _State) ->
 code_change(_OldVsn, State, _Extra) ->
     {ok, State}.
 
-do_log(File, {Key, TS, IP, Msg}) ->
-    file:write(File, [format_date(TS), " ", IP, " ", Msg]).
+do_log(File, {Key, TS, _IP, Msg}) ->
+    file:write(File, [format_date(TS), " ", Msg, "\n"]).
 
 format_date(Now) ->
     {{Y, Mo, D}, {H, Mi, S}} = calendar:now_to_local_time(Now),
